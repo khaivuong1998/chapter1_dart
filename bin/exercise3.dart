@@ -23,10 +23,9 @@ void main() {
     // print('bạn đã nhập sai');
     num3 = double.parse(data3);
   }
-  print('${num1}, ${num2}, ${num3}');
   if (num1 + num2 > num3 && num2 + num3 > num1 && num1 + num3 > num2) {
-    print('3 số vừa nhập là 3 cạnh của 1 tam giác');
+    print('3 số ${num1}, ${num2}, ${num3} là 3 cạnh của 1 tam giác');
   } else {
-    print('3 số vừa nhập không phải 3 cạnh của 1 tam giác');
+    print('3 số ${num1}, ${num2}, ${num3} không phải 3 cạnh của 1 tam giác');
   }
 }
