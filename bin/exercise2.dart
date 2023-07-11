@@ -2,7 +2,12 @@ import 'dart:io';
 
 void main() {
   print('nhập số nguyên bất kỳ');
-  int number = int.parse(stdin.readLineSync()!);
+  String data = stdin.readLineSync() ?? "0";
+  final NUMERIC = RegExp(r'^-?[0-9]+$');
+  int number = 0;
+  if (data.isNotEmpty && NUMERIC.hasMatch(data)) {
+    number = int.parse(data);
+  }
   switch (number) {
     case 0:
       print('không');
