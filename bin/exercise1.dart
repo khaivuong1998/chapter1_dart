@@ -1,16 +1,22 @@
 import 'dart:io';
 
 void main() {
-  print('nhập số nguyên bất kỳ');
-  String str = stdin.readLineSync() ?? "0";
+  print('mời nhập số nguyên bất kỳ');
+  String string = stdin.readLineSync() ?? "";
   final NUMERIC = RegExp(r'^-?[0-9]+$');
-  int number = 0;
-  if (str.isNotEmpty && NUMERIC.hasMatch(str)) {
-    number = int.parse(str);
+  if (string.isEmpty || !NUMERIC.hasMatch(string)) {
+    while (true) {
+      print('bạn cần nhập số, mời nhập lại');
+      string = stdin.readLineSync() ?? "";
+      if (string.isNotEmpty && NUMERIC.hasMatch(string)) {
+        break;
+      }
+    }
   }
-  if (number < 0) {
-    print('đây là số nguyên âm');
+  int number = int.parse(string);
+  if (number >= 0) {
+    print('${number} là số nguyên dương');
   } else {
-    print('đây là số nguyên dương');
+    print('${number} là số nguyên âm');
   }
 }
